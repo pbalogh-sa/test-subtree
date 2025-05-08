@@ -13,12 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Kind Cluster
-        uses: helm/kind-action@v1
-        with:
-          cluster_name: agntcy-test
-          wait: 300s
-
       - name: Deploy AGNTCY components
         uses: agntcy/csit/.github/actions/deploy-agp@feat/add-gw-deploy-docker-action
         with:
