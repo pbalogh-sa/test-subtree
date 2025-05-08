@@ -1,0 +1,28 @@
+name: Deploy AGNTCY Components
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Kind Cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: agntcy-test
+          wait: 300s
+
+      - name: Deploy AGNTCY components
+        uses: agntcy/deploy-action@feat/add-gw-deploy-docker-action
+        with:
+          gateway-image-tag: '0.3.11'
+          gateway-chart-tag: 'v0.1.2'
+          kind-cluster-name: 'agntcy-test'
+          kind-cluster-namespace: 'default'
