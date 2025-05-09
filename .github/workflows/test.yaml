@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy AGNTCY components
-        uses: agntcy/csit/.github/actions/deploy-agp@feat/add-gw-deploy-docker-action
+        uses: agntcy/csit/.github/actions/deploy-agp@feat/add-gw-deploy-action
         with:
           gateway-image-tag: '0.3.11'
           gateway-chart-tag: 'v0.1.2'
