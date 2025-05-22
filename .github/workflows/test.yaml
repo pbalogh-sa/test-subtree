@@ -16,7 +16,5 @@ jobs:
       - name: Deploy AGNTCY ADS components
         uses: agntcy/csit/.github/actions/deploy-ads@feat/ads-gh-action
         with:
-          directory-image-tag: '0.3.11'
-          directory-chart-tag: 'v0.1.2'
           kind-cluster-name: 'agntcy-test'
           kind-cluster-namespace: 'default'
