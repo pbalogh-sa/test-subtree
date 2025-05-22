@@ -1,4 +1,4 @@
-name: Deploy AGNTCY Components
+name: Deploy AGNTCY ADS Components
 on:
   push:
     branches:
@@ -13,10 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy AGNTCY components
-        uses: agntcy/csit/.github/actions/deploy-agp@feat/add-gw-deploy-action
+      - name: Deploy AGNTCY ADS components
+        uses: agntcy/csit/.github/actions/deploy-agp@feat/ads-gh-action
         with:
-          gateway-image-tag: '0.3.11'
-          gateway-chart-tag: 'v0.1.2'
+          directory-image-tag: '0.3.11'
+          directory-chart-tag: 'v0.1.2'
           kind-cluster-name: 'agntcy-test'
           kind-cluster-namespace: 'default'
