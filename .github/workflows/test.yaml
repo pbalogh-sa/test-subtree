@@ -18,3 +18,4 @@ jobs:
         with:
           kind-cluster-name: 'agntcy-test'
           kind-cluster-namespace: 'default'
+          deploy-dir-network: 'true'
